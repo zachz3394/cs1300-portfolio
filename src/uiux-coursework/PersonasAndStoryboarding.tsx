@@ -1,6 +1,7 @@
 import { ListItem, Heading, Image, OrderedList, Text, Box, UnorderedList } from "@chakra-ui/react";
 import '../index.css';
 import EmpathyMap from "./EmpathyMap";
+import Storyboard from "./Storyboard";
 
 const styles = {
   headingLg: {
@@ -58,12 +59,12 @@ const PersonasAndStoryboarding = () => {
     ],
   };
 
-  const addiePersona = {
+  const nelliePersona = {
     thinks: [
       'Hmm, I always have a hard time deciding what to get.',
       'What am I in the mood for today? How about a milk tea?',
       'Huh, I wonder what the difference is between these two drinks...',
-      'Ah well, we\'ll give it a shot and see if I like it!',
+      'There\'s so many choices!!',
     ],
     feels: [
       'Excited to try out a new drink',
@@ -80,7 +81,7 @@ const PersonasAndStoryboarding = () => {
     does: [
       'Scrolls through the menu thoroughly',
       'Takes some time deciding which add-ons she should get.',
-      'Asks the barista for recommendations',
+      'Asks her friends for recommendations',
     ],
   };
 
@@ -205,16 +206,31 @@ const PersonasAndStoryboarding = () => {
           This persona represents some of the users of my chosen interface, specifically those that don't like to spend too much time figuring out what they want to order. During my observations, some users didn't explore much of the menu, but rather chose from the "Popular" section of the menu without much need for thought. When I interviewed them, they explained that they had a preferred drink that they always ordered, because they knew that it tasted good. They didn't feel the need to try out other drinks that could possibly be a waste of money if the drinks didn't taste good.
         </Text>
         <Heading style={styles.headingLg} size='md'>
-          Empathy Map 2: Adventurous Addie
+          Empathy Map 2: Newbie Nellie
         </Heading>
         <Text style={styles.text}>
-          Adventurous Addie wants try out the interesting flavors that she hasn't tried before. Hmm, those fruit teas look pretty tasty... Wait, but the seasonal special sounds just as good! 
+          Newbie Nellie isn't quite sure what she should order. Her friends dragged her here, and she doesn't come here very often, so she doesn't know the menu all that well. Hmm, those fruit teas look pretty tasty... Wait, but the seasonal special sounds just as good!
         </Text>
         <Box style={styles.mapWrapper}>
         <EmpathyMap
-          personaName='Adventurous Addie'
-          persona={addiePersona} />
+          personaName='Newbie Nellie'
+          persona={nelliePersona} />
         </Box>
+        <Text style={styles.text}>
+          Nellie has a hard time deciding what to get! She doesn't have a go-to drink, so she's interested in trying out anything that sounds tasty. She wants an interface that can give her as much information as possible about each of the drinks so she can make an informed opinion about what to order. Detailed descriptions of the drinks and ingredients along with suggestions from the interface could be helpful to her.
+        </Text>
+        <Text style={styles.text}>
+          This persona represents some of the users of my chosen interface, specifically those that spent some time trying to figure out what they should get. I observed that two of the users weren't completely familiar with the menu, and were slightly confused by all the different options available to them. As such, they took a bit more time to figure out exactly what they wanted. There was also a common trend in that all the users felt that the menu could've included more information to help them make their choices.
+        </Text>
+      </div>
+      <div style={styles.section}>
+        <Heading style={styles.headingLg} size='lg'>
+          Part 4. Storyboards
+        </Heading>
+        <Text style={styles.text}>
+          Below is a storyboard I created for the Newbie Nellie persona:
+        </Text>
+        <Storyboard />
       </div>
     </div>
   );
