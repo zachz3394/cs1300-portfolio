@@ -108,13 +108,13 @@ const PersonasAndStoryboarding = () => {
           I made a sketch to familiarize myself with the interface:
         </Text>
         <Image
-          src='/tenone-screen-1.png'
+          src='/cs1300-portfolio/tenone-screen-1.png'
           fit='scale-down'
           style={styles.image}
           />
         The above image displays the main menu screen for the Ten One kiosk. Images of the drink options are displayed, along with their prices. Users can scroll down, use the navigation bar, or use the search bar to find other drinks. Clicking on a drink brings the user to the next screen:
         <Image
-          src='/tenone-screen-2.png'
+          src='/cs1300-portfolio/tenone-screen-2.png'
           fit='scale-down'
           style={styles.image}
           />
