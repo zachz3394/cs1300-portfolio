@@ -1,5 +1,6 @@
 import { ListItem, Heading, Image, OrderedList, Text, Box, UnorderedList } from "@chakra-ui/react";
 import '../index.css';
+import EmpathyMap from "./EmpathyMap";
 
 const styles = {
   headingLg: {
@@ -23,13 +24,65 @@ const styles = {
     borderStyle: 'solid',
     borderColor: 'teal',
     maxWidth: '800px',
-    margin: 'auto',
     marginTop: '24px',
     marginBottom: '24px',
+  },
+  mapWrapper: {
+    margin: '24px auto 24px',
   }
 }
 
 const PersonasAndStoryboarding = () => {
+  const ryanPersona = {
+    thinks: [
+      'What even is osmanthus tea? Ah, whatever, who cares...',
+      'I\'m not sure if I\'d like those other drinks, so I\'ll get my usual.',
+      'I\'ll get 70% ice, 50% sugar, and whole milk, just like I always do!',
+      'Looking forward to getting my favorite drink again!',
+    ],
+    feels: [
+      'Eager to get his drink',
+      'Confident that he will enjoy his order',
+      'Unsure about trying other drinks',
+      'A little intimidated by all the other options',
+    ],
+    says: [
+      'This drink is amazing, you\'ve got to try it!',
+      'The only time I get a different drink is if they sell out.',
+      'It\'s their most popular drink for a good reason!',
+    ],
+    does: [
+      'Immediately selects his favorite drink',
+      'Fills out his order customization very quickly',
+      'Skips over looking at the rest of the menu',
+    ],
+  };
+
+  const addiePersona = {
+    thinks: [
+      'Hmm, I always have a hard time deciding what to get.',
+      'What am I in the mood for today? How about a milk tea?',
+      'Huh, I wonder what the difference is between these two drinks...',
+      'Ah well, we\'ll give it a shot and see if I like it!',
+    ],
+    feels: [
+      'Excited to try out a new drink',
+      'Unsure about what the drink will taste like',
+      'Not confident in whether she made the right decision',
+      'A little pressured by the line, since she needs time to think',
+    ],
+    says: [
+      'Huh, does anyone have any recommendations?',
+      'Have you tried the mango green tea before? It sounds interesting!',
+      'Ugh, I hate having to choose just one!',
+      'Do you think I could get a sip of your drink?',
+    ],
+    does: [
+      'Scrolls through the menu thoroughly',
+      'Takes some time deciding which add-ons she should get.',
+      'Asks the barista for recommendations',
+    ],
+  };
 
   return (
     <div>
@@ -90,9 +143,6 @@ const PersonasAndStoryboarding = () => {
             What drew your immediate attention when using the kiosk?
           </Text>
           <Text as={ListItem}>
-            How did you know to use the kiosk when entering the shop, rather than ordering at the counter?
-          </Text>
-          <Text as={ListItem}>
             How was the experience of finding the drink(s) you were looking for? Did you find anything confusing?
           </Text>
           <Text as={ListItem}>
@@ -102,7 +152,7 @@ const PersonasAndStoryboarding = () => {
             What kind of information was most helpful in picking out which drink to order? Was this information made clear to you? Was there enough information for any dietary considerations?
           </Text>
           <Text as={ListItem}>
-            In what ways was pricing for the drinks conveyed to you? Were you surprised by the final price of your drink?
+            Why did you pick the drink that you did? Do you feel the interface influenced your decision in any way?
           </Text>
           <Text as={ListItem}>
             How well do you feel the kiosk communicated the possible ways to pay for your drink?
@@ -120,18 +170,51 @@ const PersonasAndStoryboarding = () => {
             Several of the users expressed that they felt that some of the menu items could've used additional information. For example, one user that was very sensitive to caffeine complained that they couldn't tell which drinks had caffeine in them. Another user said they were curious about a drink that said "with flower," except they didn't know what kind of flower it was.
           </Text>
           <Text as={ListItem}>
-            Another trend that I noticed was that of the two users that chose not to tip, both were unsatisfied that the interface had a default tip value set of 2 dollars. The third user felt inclined to tip baristas in general, but 1 dollar made more sense to them.
-          </Text>
-          <Text as={ListItem}>
             All of the users agreed that the menu did a relatively decent job at displaying the multitude of drink options that were available. However, they still agreed that the non-featured drinks on the menu were relatively hidden, due to having to scroll down to find them.
           </Text>
           <Text as={ListItem}>
-            One of the users stated that their strategy to order a drink was to pick the most visually appealing drink from the "Popular" section of the menu. Another user also shared the sentiment that the visuals from the menu were what drew their attention the most.
+            One of the users picked their drink based off of what was "Popular" in the menu, along with the visual appeal of the drink. Another user explained that he always orders that specific drink on the menu, since it tastes the best to him.
+          </Text>
+          <Text as={ListItem}>
+            Another trend that I noticed was that of the two users that chose not to tip, both were unsatisfied that the interface had a default tip value set of 2 dollars. The third user felt inclined to tip baristas in general, but 1 dollar made more sense to them.
           </Text>
           <Text as={ListItem}>
             None of the users expected the system to notify them of their order completion, choosing instead to observe the barista to see when their drinks were ready. Two of the users expressed distrust in the notification system, having had bad experiences with it before.
           </Text>
         </UnorderedList>
+      </div>
+      <div style={styles.section}>
+        <Heading style={styles.headingLg} size='lg'>
+          Part 3. Personas
+        </Heading>
+        <Heading style={styles.headingLg} size='md'>
+          Empathy Map 1: Regular Ryan
+        </Heading>
+        <Text style={styles.text}>
+          Regular Ryan knows exactly what he prefers and usually orders his favorite drink, customized just the way that he likes it. If it ain't broke, don't fix it!
+        </Text>
+        <Box style={styles.mapWrapper}>
+          <EmpathyMap
+            personaName='Regular Ryan'
+            persona={ryanPersona} />
+        </Box>
+        <Text style={styles.text}>
+          Ryan really only is looking for one or two drinks on the menu; he doesn't particularly care about trying new drinks. As such, he wants an interface that makes it easy to find and customize the drink he's looking for. Ryan doesn't want to spend too long, so he prefers a streamlined interface that doesn't have too many extra steps.
+        </Text>
+        <Text style={styles.text}>
+          This persona represents some of the users of my chosen interface, specifically those that don't like to spend too much time figuring out what they want to order. During my observations, some users didn't explore much of the menu, but rather chose from the "Popular" section of the menu without much need for thought. When I interviewed them, they explained that they had a preferred drink that they always ordered, because they knew that it tasted good. They didn't feel the need to try out other drinks that could possibly be a waste of money if the drinks didn't taste good.
+        </Text>
+        <Heading style={styles.headingLg} size='md'>
+          Empathy Map 2: Adventurous Addie
+        </Heading>
+        <Text style={styles.text}>
+          Adventurous Addie wants try out the interesting flavors that she hasn't tried before. Hmm, those fruit teas look pretty tasty... Wait, but the seasonal special sounds just as good! 
+        </Text>
+        <Box style={styles.mapWrapper}>
+        <EmpathyMap
+          personaName='Adventurous Addie'
+          persona={addiePersona} />
+        </Box>
       </div>
     </div>
   );
