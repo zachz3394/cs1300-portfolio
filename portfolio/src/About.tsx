@@ -3,7 +3,7 @@ const About = () => {
       <div>
           <h2>About Page</h2>
           <main>
-              <p>This section contains information about...</p>
+              <p>Work in progress...</p>
           </main>
       </div>
   )
