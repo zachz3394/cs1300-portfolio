@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const c = {
   sidebarOpenWidth: 250,
-  sidebarClosedWidth: 80,
+  sidebarClosedWidth: 64,
 }
 
 export default function App() {

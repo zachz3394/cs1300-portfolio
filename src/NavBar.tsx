@@ -35,12 +35,11 @@ const NavBar = (props: NavBarProps) => {
     >
       <IconButton
         aria-label='Menu'
-        icon={disclosureProps.isOpen ? <CloseIcon w={6} h={6}/> : <HamburgerIcon w={8} h={8}/>}
+        icon={disclosureProps.isOpen ? <CloseIcon w={4} h={4}/> : <HamburgerIcon w={6} h={6}/>}
         variant='link'
         style={{
           height: '64px',
           width: '64px',
-          margin: '8px',
         }}
         color={c.textColor}
         {...disclosureProps.getButtonProps()}
