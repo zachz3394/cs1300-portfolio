@@ -3,8 +3,8 @@ import { SimpleGrid, Heading, Image, Link, ListItem, Text, OrderedList } from "@
 const ResponsiveRedesign = () => {
   const styles = {
     container: {
-      maxWidth: '1200px',
-      padding: '64px',
+      maxWidth: 'min(800px, 100%)',
+      margin: '64px auto',
     },
     heading2xl: {
       marginBottom: '24px',

@@ -4,6 +4,10 @@ import EmpathyMap from "./EmpathyMap";
 import Storyboard from "./Storyboard";
 
 const styles = {
+  container: {
+    maxWidth: 'min(800px, 100%)',
+    margin: '64px auto',
+  },
   headingLg: {
     marginBottom: '16px',
   },
@@ -86,9 +90,9 @@ const PersonasAndStoryboarding = () => {
   };
 
   return (
-    <div>
+    <div style={styles.container}>
       <Heading style={styles.heading2xl} size='2xl'>
-        UI Research
+        Personas and Storyboarding
       </Heading>
       <div style={styles.section}>
         <Heading style={styles.headingLg} size='lg'>
@@ -111,13 +115,13 @@ const PersonasAndStoryboarding = () => {
         <Image
           src='/cs1300-portfolio/tenone-screen-1.png'
           fit='scale-down'
-          style={styles.image}
+          style={{...styles.image, maxWidth: 'min(800px, 100%)'}}
           />
         The above image displays the main menu screen for the Ten One kiosk. Images of the drink options are displayed, along with their prices. Users can scroll down, use the navigation bar, or use the search bar to find other drinks. Clicking on a drink brings the user to the next screen:
         <Image
           src='/cs1300-portfolio/tenone-screen-2.png'
           fit='scale-down'
-          style={styles.image}
+          style={{...styles.image, maxWidth: 'min(800px, 100%)'}}
           />
         <Text style={styles.text}>
           This screen allows users to customize their drinks. The extent of customization depends on the drink, with some drinks having more or fewer options than others. Each of the customization options also has its price attached to it. The total pre-tax price of the drink is displayed on the "Add to Cart" button. After adding the drinks they want to their cart, the user gives their phone number to receive order updates, and then proceeds to check out using the attached card reader.
@@ -197,7 +201,8 @@ const PersonasAndStoryboarding = () => {
         <Box style={styles.mapWrapper}>
           <EmpathyMap
             personaName='Regular Ryan'
-            persona={ryanPersona} />
+            persona={ryanPersona}
+          />
         </Box>
         <Text style={styles.text}>
           Ryan really only is looking for one or two drinks on the menu; he doesn't particularly care about trying new drinks. As such, he wants an interface that makes it easy to find and customize the drink he's looking for. Ryan doesn't want to spend too long, so he prefers a streamlined interface that doesn't have too many extra steps.

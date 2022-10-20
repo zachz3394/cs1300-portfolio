@@ -3,6 +3,11 @@ import NavBar from './NavBar';
 import { useDisclosure, useMediaQuery } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
+const c = {
+  sidebarOpenWidth: 250,
+  sidebarClosedWidth: 80,
+}
+
 export default function App() {
   const disclosureProps = useDisclosure();
   const [ mobileScreen ] = useMediaQuery('(max-width: 600px');
@@ -12,7 +17,7 @@ export default function App() {
       return (
         <motion.div
           initial={false}
-          animate={{ width: disclosureProps.isOpen ? 250 : 50 }}
+          animate={{ width: disclosureProps.isOpen ? c.sidebarOpenWidth : c.sidebarClosedWidth }}
           transition={{type: 'tween'}}
           style={{
             overflow: 'hidden',
@@ -37,7 +42,7 @@ export default function App() {
       return (
         <motion.div
           initial={false}
-          animate={{ left: disclosureProps.isOpen ? 250 : 50 }}
+          animate={{ left: disclosureProps.isOpen ? c.sidebarOpenWidth : c.sidebarClosedWidth }}
           transition={{type: 'tween'}}
           style={{
             position: 'absolute',

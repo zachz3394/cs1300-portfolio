@@ -16,7 +16,7 @@ interface NavBarProps {
 }
 
 const c = {
-  listLeft: 80,
+  listLeft: '36px',
   bgColor: 'teal',
   textColor: 'white',
   listSpacing: 8,
@@ -35,19 +35,19 @@ const NavBar = (props: NavBarProps) => {
     >
       <IconButton
         aria-label='Menu'
-        icon={disclosureProps.isOpen ? <CloseIcon/> : <HamburgerIcon/>}
+        icon={disclosureProps.isOpen ? <CloseIcon w={6} h={6}/> : <HamburgerIcon w={8} h={8}/>}
         variant='link'
-        size={disclosureProps.isOpen ? 'md' : 'lg'}
         style={{
-          height: '50px',
-          width: '50px',
+          height: '64px',
+          width: '64px',
+          margin: '8px',
         }}
         color={c.textColor}
         {...disclosureProps.getButtonProps()}
       />
       <motion.nav
         initial={false}
-        animate={{ left: disclosureProps.isOpen ? c.listLeft : -c.listLeft }}
+        animate={{ left: disclosureProps.isOpen ? c.listLeft : '-200px' }}
         transition={{type: 'tween'}}
         style={{
           top: '200px',
@@ -63,7 +63,7 @@ const NavBar = (props: NavBarProps) => {
                   Home
                 </Text>
               </ListItem>
-              <ListItem color={c.textColor}>
+              {/* <ListItem color={c.textColor}>
                 <Text as={Link} to='/about'>
                   About
                 </Text>
@@ -71,6 +71,16 @@ const NavBar = (props: NavBarProps) => {
               <ListItem color={c.textColor}>
                 <Text as={Link} to='/work'>
                   Work
+                </Text>
+              </ListItem> */}
+              <ListItem color={c.textColor}>
+                <Text as={Link} to='/uiux/personas-storyboarding'>
+                  Personas and Storyboarding
+                </Text>
+              </ListItem>
+              <ListItem color={c.textColor}>
+                <Text as={Link} to='/uiux/responsive-redesign'>
+                  Responsive Redesign
                 </Text>
               </ListItem>
           </List>
