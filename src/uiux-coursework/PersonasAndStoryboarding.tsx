@@ -1,4 +1,5 @@
 import { ListItem, Heading, Image, OrderedList, Text, Box, UnorderedList } from "@chakra-ui/react";
+import { useEffect } from "react";
 import '../index.css';
 import EmpathyMap from "./EmpathyMap";
 import Storyboard from "./Storyboard";
@@ -38,6 +39,10 @@ const styles = {
 }
 
 const PersonasAndStoryboarding = () => {
+  useEffect(() => {
+    document.title = 'Personas and Storyboarding';
+  });
+
   const ryanPersona = {
     thinks: [
       'What even is osmanthus tea? Ah, whatever, who cares...',

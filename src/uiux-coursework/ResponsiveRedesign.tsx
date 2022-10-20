@@ -1,6 +1,11 @@
 import { SimpleGrid, Heading, Image, Link, ListItem, Text, OrderedList } from "@chakra-ui/react";
+import { useEffect } from "react";
 
 const ResponsiveRedesign = () => {
+  useEffect(() => {
+    document.title = 'Responsive Redesign';
+  });
+
   const styles = {
     container: {
       maxWidth: 'min(800px, 100%)',
