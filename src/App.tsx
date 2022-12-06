@@ -6,14 +6,14 @@ export default function App() {
 
   return (
     <Box
-      width='100vw'
+      maxWidth='100vw'
       display='flex'
       flexDirection='column'
       alignItems='center'
     >
       <Box
         width='100%'
-        maxWidth='1200px'
+        maxWidth='1080px'
       >
         <NavBar />
         <AppRouter />

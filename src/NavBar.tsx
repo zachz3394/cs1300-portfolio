@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Flex, HStack, Text } from '@chakra-ui/react';
 
-const c = {
-  textColor: 'black',
+interface TextLinkProps {
+  to: string,
+  label: string,
+  ariaLabel: string,
+}
+
+const TextLink = (props: TextLinkProps) => {
+  return (
+    <Text as={Link} to={props.to} aria-label={props.ariaLabel} _hover={{ color: '#6BBF59' }}>
+      {props.label}
+    </Text>
+  )
 }
 
 const NavBar = () => {
@@ -12,20 +22,17 @@ const NavBar = () => {
       align='center'
       justify='space-between'
       padding='0px 36px'
+      position='fixed'
+      width='100%'
+      maxWidth='1080px'
+      bgGradient='linear(to-b, #FFFFFF, #FFFFFFFF, #FFFFFFEE, #FFFFFFDD, #FFFFFFAA, #FFFFFF00)'
+      zIndex='1'
     >
-      <Text as={Link} to='/'>
-        Intrepid Panda
-      </Text>
+      <TextLink to='/' label='Intrepid Panda' ariaLabel='link to homepage'/>
       <HStack spacing='48px'>
-        <Text color={c.textColor} as={Link} to='/uiux/personas-storyboarding'>
-          Portfolio
-        </Text>
-        <Text as={Link} to='/uiux/personas-storyboarding'>
-          Research
-        </Text>
-        <Text as={Link} to='/uiux/responsive-redesign'>
-          About
-        </Text>
+        <TextLink to='/uiux/responsive-redesign' label='Portfolio' ariaLabel='link to portfolio section' />
+        <TextLink to='/uiux/personas-storyboarding' label='Research' ariaLabel='link to research section' />
+        <TextLink to='/uiux/about' label='About' ariaLabel='link to about section' />
       </HStack>
     </Flex>
   );
